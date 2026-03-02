@@ -48,7 +48,7 @@ export default function Navbar() {
                         Iniciar sesión
                     </Link>
                     <button onClick={() => setIsModalOpen(true)} className="bg-emerald-600 text-white px-4 py-1.5 rounded-md text-sm font-bold hover:bg-emerald-500 transition-all shadow-lg shadow-emerald-900/20">
-                        Solicitar implementación
+                        Solicitar evaluación
                     </button>
                 </div>
 
@@ -65,7 +65,7 @@ export default function Navbar() {
                     <button onClick={() => scrollTo('solucion')} className="text-left text-sm font-medium text-zinc-300">Qué Incluye</button>
                     <button onClick={() => scrollTo('audiencia')} className="text-left text-sm font-medium text-zinc-300">Para Quién Es</button>
                     <Link to="/login" className="text-left text-sm font-medium text-zinc-300">Dashboard</Link>
-                    <button onClick={() => { setMobileMenuOpen(false); setIsModalOpen(true); }} className="text-left text-sm font-medium text-emerald-400">Solicitar implementación</button>
+                    <button onClick={() => { setMobileMenuOpen(false); setIsModalOpen(true); }} className="text-left text-sm font-medium text-emerald-400">Solicitar evaluación</button>
                 </div>
             )}
 

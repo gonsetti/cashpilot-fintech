@@ -8,12 +8,11 @@ interface LeadCaptureModalProps {
 export default function LeadCaptureModal({ isOpen, onClose }: LeadCaptureModalProps) {
     const [formData, setFormData] = useState({
         nombre: "",
-        whatsapp: "",
-        email: "",
-        tipoNegocio: "Agencia",
-        herramientaActual: "Excel",
-        urgencia: "Este mes",
-        mensaje: "",
+        empresa: "",
+        facturacion: "",
+        empleados: "",
+        decision: "",
+        presupuesto: "2k – 5k",
     });
 
     const [enviado, setEnviado] = useState(false);
@@ -39,12 +38,11 @@ export default function LeadCaptureModal({ isOpen, onClose }: LeadCaptureModalPr
 
     const generateMailBody = () => {
         return `Nombre: ${formData.nombre}
-WhatsApp: ${formData.whatsapp}
-Email: ${formData.email || 'No provisto'}
-Tipo de negocio: ${formData.tipoNegocio}
-Herramienta actual: ${formData.herramientaActual}
-Urgencia: ${formData.urgencia}
-Mensaje adicional: ${formData.mensaje || 'Ninguno'}`;
+Empresa: ${formData.empresa}
+Facturación mensual aproximada: ${formData.facturacion}
+Cantidad de empleados: ${formData.empleados}
+Decisión a evaluar: ${formData.decision}
+Presupuesto estimado: ${formData.presupuesto}`;
     };
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -76,7 +74,7 @@ Mensaje adicional: ${formData.mensaje || 'Ninguno'}`;
                 {/* Header */}
                 <div className="flex justify-between items-center p-6 border-b border-zinc-800/50">
                     <div>
-                        <h2 className="text-xl font-bold text-zinc-100">Solicitar Implementación</h2>
+                        <h2 className="text-xl font-bold text-zinc-100">Solicitar Evaluación</h2>
                         <p className="text-sm text-zinc-400 mt-1">Completa tus datos y nos pondremos en contacto.</p>
                     </div>
                     <button onClick={onClose} className="text-zinc-500 hover:text-zinc-300 transition-colors p-2 -mr-2">
@@ -93,7 +91,7 @@ Mensaje adicional: ${formData.mensaje || 'Ninguno'}`;
                             </div>
                             <h3 className="text-xl font-bold text-zinc-100 mb-2">¡Solicitud generada!</h3>
                             <p className="text-zinc-400 mb-8 max-w-sm mx-auto">
-                                Se ha abierto tu cliente de correo para enviar la solicitud. Si no se abrió correctamente, puedes copiar el mensaje y enviarlo manual a <b>avino.contacto@gmail.com</b>.
+                                Tu solicitud será revisada manualmente. Te responderemos en menos de 48 horas. Si la app de correo no se abrió automáticamente, envíalo a <b>avino.contacto@gmail.com</b>.
                             </p>
                             <button
                                 onClick={handleCopy}
@@ -114,55 +112,39 @@ Mensaje adicional: ${formData.mensaje || 'Ninguno'}`;
                                     <input required name="nombre" value={formData.nombre} onChange={handleChange} className="w-full bg-[#050505] border border-zinc-800 rounded p-2.5 text-zinc-200 text-sm focus:border-emerald-500 focus:outline-none transition-colors" placeholder="Ej. Juan Pérez" />
                                 </div>
                                 <div>
-                                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5 uppercase tracking-wide">WhatsApp *</label>
-                                    <input required name="whatsapp" value={formData.whatsapp} onChange={handleChange} className="w-full bg-[#050505] border border-zinc-800 rounded p-2.5 text-zinc-200 text-sm focus:border-emerald-500 focus:outline-none transition-colors" placeholder="+54 9 11 1234-5678" />
+                                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5 uppercase tracking-wide">Empresa *</label>
+                                    <input required name="empresa" value={formData.empresa} onChange={handleChange} className="w-full bg-[#050505] border border-zinc-800 rounded p-2.5 text-zinc-200 text-sm focus:border-emerald-500 focus:outline-none transition-colors" placeholder="Nombre de tu empresa" />
                                 </div>
-                            </div>
-
-                            <div>
-                                <label className="block text-xs font-semibold text-zinc-400 mb-1.5 uppercase tracking-wide">Email</label>
-                                <input type="email" name="email" value={formData.email} onChange={handleChange} className="w-full bg-[#050505] border border-zinc-800 rounded p-2.5 text-zinc-200 text-sm focus:border-emerald-500 focus:outline-none transition-colors" placeholder="nombre@empresa.com" />
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
-                                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5 uppercase tracking-wide">Tipo de negocio</label>
-                                    <select name="tipoNegocio" value={formData.tipoNegocio} onChange={handleChange} className="w-full bg-[#050505] border border-zinc-800 rounded p-2.5 text-zinc-200 text-sm focus:border-emerald-500 focus:outline-none transition-colors">
-                                        <option value="Agencia">Agencia</option>
-                                        <option value="Ecommerce">Ecommerce</option>
-                                        <option value="Servicios Profesionales">Servicios Profesionales</option>
-                                        <option value="Inmobiliaria">Inmobiliaria</option>
-                                        <option value="Otro">Otro</option>
-                                    </select>
+                                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5 uppercase tracking-wide">Facturación Mensual (USD) *</label>
+                                    <input required name="facturacion" value={formData.facturacion} onChange={handleChange} className="w-full bg-[#050505] border border-zinc-800 rounded p-2.5 text-zinc-200 text-sm focus:border-emerald-500 focus:outline-none transition-colors" placeholder="Ej. 50.000" />
                                 </div>
                                 <div>
-                                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5 uppercase tracking-wide">Urgencia</label>
-                                    <select name="urgencia" value={formData.urgencia} onChange={handleChange} className="w-full bg-[#050505] border border-zinc-800 rounded p-2.5 text-zinc-200 text-sm focus:border-emerald-500 focus:outline-none transition-colors">
-                                        <option value="Esta semana">Esta semana</option>
-                                        <option value="Este mes">Este mes</option>
-                                        <option value="1-3 meses">1-3 meses</option>
-                                    </select>
+                                    <label className="block text-xs font-semibold text-zinc-400 mb-1.5 uppercase tracking-wide">Cantidad de Empleados *</label>
+                                    <input required name="empleados" value={formData.empleados} onChange={handleChange} className="w-full bg-[#050505] border border-zinc-800 rounded p-2.5 text-zinc-200 text-sm focus:border-emerald-500 focus:outline-none transition-colors" placeholder="Ej. 15" />
                                 </div>
                             </div>
 
                             <div>
-                                <label className="block text-xs font-semibold text-zinc-400 mb-1.5 uppercase tracking-wide">¿Dónde llevas tus números hoy?</label>
-                                <select name="herramientaActual" value={formData.herramientaActual} onChange={handleChange} className="w-full bg-[#050505] border border-zinc-800 rounded p-2.5 text-zinc-200 text-sm focus:border-emerald-500 focus:outline-none transition-colors">
-                                    <option value="Excel">Excel / Planillas Locales</option>
-                                    <option value="Google Sheets">Google Sheets</option>
-                                    <option value="Contador">Se encarga el contador</option>
-                                    <option value="Nada ordenado">No tengo nada ordenado</option>
-                                </select>
+                                <label className="block text-xs font-semibold text-zinc-400 mb-1.5 uppercase tracking-wide">¿Qué decisión importante estás evaluando? *</label>
+                                <textarea required name="decision" value={formData.decision} onChange={handleChange} className="w-full bg-[#050505] border border-zinc-800 rounded p-2.5 text-zinc-200 text-sm min-h-[80px] focus:border-emerald-500 focus:outline-none transition-colors" placeholder="Contratar un nuevo rol clave, invertir en tecnología, abrir una sucursal..." />
                             </div>
 
                             <div>
-                                <label className="block text-xs font-semibold text-zinc-400 mb-1.5 uppercase tracking-wide">Mensaje Adicional</label>
-                                <textarea name="mensaje" value={formData.mensaje} onChange={handleChange} className="w-full bg-[#050505] border border-zinc-800 rounded p-2.5 text-zinc-200 text-sm min-h-[80px] focus:border-emerald-500 focus:outline-none transition-colors" placeholder="Cuéntanos brevemente tu mayor problema con el flujo de caja hoy..." />
+                                <label className="block text-xs font-semibold text-zinc-400 mb-1.5 uppercase tracking-wide">Presupuesto Estimado</label>
+                                <select name="presupuesto" value={formData.presupuesto} onChange={handleChange} className="w-full bg-[#050505] border border-zinc-800 rounded p-2.5 text-zinc-200 text-sm focus:border-emerald-500 focus:outline-none transition-colors">
+                                    <option value="2k – 5k">USD 2K – 5K</option>
+                                    <option value="5k – 10k">USD 5K – 10K</option>
+                                    <option value="10k+">USD 10K+</option>
+                                </select>
                             </div>
 
                             <div className="pt-4 border-t border-zinc-800/50">
                                 <button type="submit" className="w-full bg-emerald-600 text-white font-bold py-3.5 rounded-md hover:bg-emerald-500 transition-colors shadow-lg shadow-emerald-900/20">
-                                    Enviar Solicitud
+                                    Solicitar evaluación
                                 </button>
                             </div>
                         </form>

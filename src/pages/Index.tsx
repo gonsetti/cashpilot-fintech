@@ -19,27 +19,22 @@ export default function Index() {
 
       <main className="flex-1">
         {/* HERO */}
-        <section className="pt-48 pb-32 px-6 max-w-5xl mx-auto text-center border-b border-zinc-900/50">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-8">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            Disponible para 10 implementaciones este mes
-          </div>
+        <section className="pt-40 pb-32 px-6 max-w-5xl mx-auto text-center border-b border-zinc-900/50">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-zinc-100 tracking-tight leading-[1.1] mb-8 max-w-4xl mx-auto">
-            Control total de tu flujo de caja, sin Excel.
+            Tomá decisiones grandes sin poner en riesgo tu caja.
           </h1>
           <p className="text-lg md:text-xl text-zinc-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Implementamos CashPilot en tu negocio para que veas tus números clave en tiempo real y tomes decisiones con confianza.
+            Diseño e implemento dashboards financieros personalizados para dueños que ya facturan y necesitan claridad real antes de crecer.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button onClick={() => setIsModalOpen(true)} className="w-full sm:w-auto bg-emerald-600 text-white px-8 py-4 rounded-md font-bold text-base hover:bg-emerald-500 transition-all shadow-lg shadow-emerald-900/20">
-              Solicitar implementación
-            </button>
-            <a href="#solucion" className="w-full sm:w-auto bg-transparent border border-zinc-700 text-zinc-300 px-8 py-4 rounded-md font-semibold text-base hover:bg-zinc-800 transition-colors">
-              Ver cómo funciona
-            </a>
+          <div className="flex flex-col gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full sm:w-auto">
+              <button onClick={() => setIsModalOpen(true)} className="w-full sm:w-auto bg-emerald-600 text-white px-8 py-4 rounded-md font-bold text-base hover:bg-emerald-500 transition-all shadow-lg shadow-emerald-900/20">
+                Solicitar evaluación
+              </button>
+              <a href="#solucion" className="w-full sm:w-auto bg-transparent border border-zinc-700 text-zinc-300 px-8 py-4 rounded-md font-semibold text-base hover:bg-zinc-800 transition-colors">
+                Ver cómo funciona
+              </a>
+            </div>
           </div>
         </section>
 
@@ -94,41 +89,22 @@ export default function Index() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8">
-                <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center shrink-0 mt-1">
-                    <span className="text-emerald-500 font-bold">1</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-zinc-100 mb-2">Dashboard listo con tus métricas clave</h3>
-                    <p className="text-zinc-400">Vas a poder ver tu cash real, rentabilidad por proyecto y clientes al día en una sola pantalla visual y automatizada.</p>
-                  </div>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <span className="material-icons text-emerald-500">check_circle</span>
+                  <p className="text-lg text-zinc-300 font-medium">Dashboard financiero hecho a medida.</p>
                 </div>
-                <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center shrink-0 mt-1">
-                    <span className="text-emerald-500 font-bold">2</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-zinc-100 mb-2">Estructura inicial y carga guiada (sin Excel eterno)</h3>
-                    <p className="text-zinc-400">Dejamos tus cuentas conectadas y tus gastos categorizados. No tenés que aprender a utilizar un software desde cero por tu cuenta.</p>
-                  </div>
+                <div className="flex items-center gap-4">
+                  <span className="material-icons text-emerald-500">check_circle</span>
+                  <p className="text-lg text-zinc-300 font-medium">Proyección clara de caja.</p>
                 </div>
-                <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center shrink-0 mt-1">
-                    <span className="text-emerald-500 font-bold">3</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-zinc-100 mb-2">Acompañamiento para que tomes decisiones</h3>
-                    <p className="text-zinc-400">Identificamos cuellos de botella y te mostramos cómo usar los números a tu favor mes a mes. No estás solo.</p>
-                  </div>
+                <div className="flex items-center gap-4">
+                  <span className="material-icons text-emerald-500">check_circle</span>
+                  <p className="text-lg text-zinc-300 font-medium">Escenarios de contratación o inversión.</p>
                 </div>
-
-                <div className="bg-[#050505] border border-emerald-900/30 p-4 rounded-lg flex items-center gap-4 mt-6">
-                  <span className="material-icons text-emerald-500">schedule</span>
-                  <div>
-                    <span className="block text-zinc-300 font-bold">Tiempo de entrega rápido</span>
-                    <span className="text-zinc-500 text-sm">Implementación típica: 7 días, no semanas.</span>
-                  </div>
+                <div className="flex items-center gap-4">
+                  <span className="material-icons text-emerald-500">check_circle</span>
+                  <p className="text-lg text-zinc-300 font-medium">Revisión estratégica mensual opcional.</p>
                 </div>
               </div>
               <div className="relative">
@@ -168,6 +144,40 @@ export default function Index() {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CÓMO FUNCIONA */}
+        <section className="py-24 px-6 bg-[#030303] border-b border-zinc-900/50">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-zinc-100 tracking-tight mb-16 text-center">
+              Cómo funciona
+            </h2>
+            <div className="grid md:grid-cols-3 gap-12">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 rounded-full border border-zinc-800 bg-[#0a0a0a] flex items-center justify-center mb-6 text-zinc-400 font-bold text-lg">
+                  1
+                </div>
+                <h3 className="text-xl font-bold text-zinc-200 mb-3">Analizamos tu situación actual</h3>
+                <p className="text-zinc-500 leading-relaxed text-sm">Entendemos tu estructura de ingresos, gastos y flujos actuales para mapear tu realidad financiera.</p>
+              </div>
+              <div className="flex flex-col items-center text-center relative">
+                <div className="hidden md:block absolute top-6 -left-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent -z-10"></div>
+                <div className="w-12 h-12 rounded-full border border-zinc-800 bg-[#0a0a0a] flex items-center justify-center mb-6 text-zinc-400 font-bold text-lg">
+                  2
+                </div>
+                <h3 className="text-xl font-bold text-zinc-200 mb-3">Construimos tu dashboard personalizado</h3>
+                <p className="text-zinc-500 leading-relaxed text-sm">Integramos y ordenamos tus números en una única pantalla clara, sin planillas que se rompen.</p>
+              </div>
+              <div className="flex flex-col items-center text-center relative">
+                <div className="hidden md:block absolute top-6 -left-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent -z-10"></div>
+                <div className="w-12 h-12 rounded-full border border-zinc-800 bg-[#0a0a0a] flex items-center justify-center mb-6 text-zinc-400 font-bold text-lg">
+                  3
+                </div>
+                <h3 className="text-xl font-bold text-zinc-200 mb-3">Definimos juntos las decisiones correctas</h3>
+                <p className="text-zinc-500 leading-relaxed text-sm">Te acompañamos a interpretar la información para que crezcas con rentabilidad y sin sorpresas.</p>
               </div>
             </div>
           </div>
@@ -229,7 +239,7 @@ export default function Index() {
               Agenda una llamada con nuestro equipo y te mostramos cómo organizamos las finanzas de tu negocio en días.
             </p>
             <button onClick={() => setIsModalOpen(true)} className="bg-emerald-600 text-white px-10 py-5 rounded-md font-bold text-lg hover:bg-emerald-500 transition-colors inline-block tracking-wide shadow-xl shadow-emerald-900/20">
-              Solicitar implementación
+              Solicitar evaluación
             </button>
           </div>
         </section>
