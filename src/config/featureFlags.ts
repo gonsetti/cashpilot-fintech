@@ -1,4 +1,3 @@
 export const FEATURE_FLAGS = {
-  ADVANCED_ANALYTICS: true,
+  ADVANCED_ANALYTICS: false,
 };
-// Fixed by subagent
