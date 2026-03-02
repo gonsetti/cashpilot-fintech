@@ -1,0 +1,13 @@
+project_id = "dchdxcukxxtxzekausqd"
+
+[functions.weekly-summary]
+verify_jwt = false
+
+[functions.create-preference]
+verify_jwt = false
+
+[functions.mp-webhook]
+verify_jwt = false
+
+[functions.check-subscriptions]
+verify_jwt = false
