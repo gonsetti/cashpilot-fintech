@@ -44,9 +44,6 @@ export default function Navbar() {
                     <button onClick={() => scrollTo('audiencia')} className="text-sm font-medium text-zinc-400 hover:text-zinc-200 transition-colors">
                         Para Quién Es
                     </button>
-                    <Link to="/login" className="text-sm font-medium text-zinc-400 hover:text-zinc-200 transition-colors">
-                        Iniciar sesión
-                    </Link>
                     <button onClick={() => setIsModalOpen(true)} className="bg-emerald-600 text-white px-4 py-1.5 rounded-md text-sm font-bold hover:bg-emerald-500 transition-all shadow-lg shadow-emerald-900/20">
                         Solicitar evaluación
                     </button>
@@ -64,7 +61,6 @@ export default function Navbar() {
                     <button onClick={() => scrollTo('problema')} className="text-left text-sm font-medium text-zinc-300">El Problema</button>
                     <button onClick={() => scrollTo('solucion')} className="text-left text-sm font-medium text-zinc-300">Qué Incluye</button>
                     <button onClick={() => scrollTo('audiencia')} className="text-left text-sm font-medium text-zinc-300">Para Quién Es</button>
-                    <Link to="/login" className="text-left text-sm font-medium text-zinc-300">Dashboard</Link>
                     <button onClick={() => { setMobileMenuOpen(false); setIsModalOpen(true); }} className="text-left text-sm font-medium text-emerald-400">Solicitar evaluación</button>
                 </div>
             )}
