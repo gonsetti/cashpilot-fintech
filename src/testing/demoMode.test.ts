@@ -40,9 +40,9 @@ describe("SCIL Level 10 - Institutional Demo Guard", () => {
 
         // Severe condition assertions
         // VaR debe aumentar (mayores pérdidas)
-        expect(extremeResult.valueAtRisk).toBeGreaterThanOrEqual(mildResult.valueAtRisk);
+        expect(extremeResult.VaR).toBeGreaterThanOrEqual(mildResult.VaR);
 
-        // Probability of survival debe bajar en un escenario extremo
-        expect(extremeResult.survivalProbability).toBeLessThanOrEqual(mildResult.survivalProbability);
+        // Collapse probability debe subir en un escenario extremo
+        expect(extremeResult.systemicCollapseProbability).toBeGreaterThanOrEqual(mildResult.systemicCollapseProbability);
     });
 });

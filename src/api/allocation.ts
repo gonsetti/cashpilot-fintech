@@ -1,11 +1,10 @@
 import { exportActiveGraph } from './capital';
-import { solveOptimalAllocation, AllocationProposal } from '../core/allocationSolver';
+import { solveOptimalAllocation, OptimalAllocationOutput } from '../core/allocationSolver';
 import { GovernanceAudit } from '../core/governance';
 
 export interface OptimalAllocationResponse {
     timestamp: string;
-    proposals: AllocationProposal[];
-    totalExpectedFragilityDrop: number;
+    result: OptimalAllocationOutput;
 }
 
 /**
@@ -18,17 +17,14 @@ export async function getOptimalAllocation(): Promise<OptimalAllocationResponse>
     // Simulate API calculation latency
     await new Promise(r => setTimeout(r, 900));
 
-    const proposals = solveOptimalAllocation(graph);
-
-    const totalDrop = proposals.reduce((acc, curr) => acc + curr.expectedFragilityDrop, 0);
+    const result = solveOptimalAllocation(graph);
 
     const response: OptimalAllocationResponse = {
         timestamp: new Date().toISOString(),
-        proposals,
-        totalExpectedFragilityDrop: totalDrop
+        result
     };
 
-    if (proposals.length > 0) {
+    if (result.transfers.length > 0) {
         await GovernanceAudit.logEvent('ALLOCATION_PROPOSED', response);
     }
 

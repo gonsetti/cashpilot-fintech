@@ -64,7 +64,7 @@ export default function SCILTerminal() {
   const [copied, setCopied] = useState(false);
 
   // Run History & Compare State
-  const { runs, selectedRun, selectRun, saveCurrentRun, updateLabel, deleteRun, clearSelected, compareWithCurrent } = useRunHistory();
+  const { runs, selectedRun, selectRun, saveCurrentRun, updateLabel, deleteRun, clearSelected, compareWithCurrent, getFullRun } = useRunHistory();
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
   const [compareDiff, setCompareDiff] = useState<RunDiff | null>(null);
 
@@ -673,23 +673,23 @@ export default function SCILTerminal() {
               OPTIMAL ALLOCATION SOLVER
             </h2>
 
-            {allocationReport && allocationReport.proposals.length > 0 ? (
+            {allocationReport && allocationReport.result.transfers.length > 0 ? (
               <div className="space-y-3">
                 <div className="text-[0.65rem] text-zinc-500 mb-2">
-                  EXECUTING THESE TRANSFERS WILL DROP SYSTEMIC FRAGILITY BY <span className="text-emerald-400 font-bold">{allocationReport.totalExpectedFragilityDrop.toFixed(2)} PTS</span>.
+                  EXECUTING THESE TRANSFERS WILL DROP SYSTEMIC FRAGILITY BY <span className="text-emerald-400 font-bold">{allocationReport.result.systemicImprovementPercent.toFixed(2)}%</span>.
                 </div>
-                {allocationReport.proposals.map((p, i) => (
+                {allocationReport.result.transfers.map((t, i) => (
                   <div key={i} className="bg-zinc-900 border border-zinc-800 p-3 rounded">
                     <div className="flex items-center gap-2 justify-between mb-2">
-                      <span className="text-zinc-300 font-bold">{p.sourceEntityId}</span>
+                      <span className="text-zinc-300 font-bold">{t.sourceEntityId}</span>
                       <span className="text-zinc-600 block flex-1 border-b border-dashed border-zinc-700 mx-2 relative">
                         <span className="material-icons text-[0.6rem] text-blue-500 absolute -top-1.5 right-0 bg-zinc-900">arrow_forward</span>
                       </span>
-                      <span className="text-zinc-300 font-bold">{p.targetEntityId}</span>
+                      <span className="text-zinc-300 font-bold">{t.targetEntityId}</span>
                     </div>
                     <div className="flex justify-between items-center text-[0.65rem]">
-                      <span className="text-blue-400">${p.transferAmount.toLocaleString()}</span>
-                      <span className="text-emerald-500">-{p.expectedFragilityDrop.toFixed(2)} FRAGILITY</span>
+                      <span className="text-blue-400">${t.amount.toLocaleString()}</span>
+                      <span className="text-emerald-500">TRANSFER</span>
                     </div>
                   </div>
                 ))}
@@ -871,7 +871,8 @@ export default function SCILTerminal() {
                   </button>
                   <button
                     onClick={() => {
-                      const packToDl = run.evidencePack || repo.get(run.id)?.evidencePack;
+                      const fullRun = getFullRun(run.id);
+                      const packToDl = fullRun?.evidencePack;
                       if (packToDl) {
                         const payloadString = stableStringify(packToDl);
                         const blob = new Blob([payloadString], { type: "application/json" });
