@@ -60,7 +60,7 @@ export async function runInstitutionalDemo(
         // which produces deterministic results assuming graph state is the same.
 
         const res = await executeSimulation(spec.payload);
-        scenarioResults.push({ name: spec.name, result: res });
+        scenarioResults.push({ name: spec.name, result: res as unknown as SimulationResult });
         lastExtendedResult = res; // Save last for extracting versions & hashes
     }
 

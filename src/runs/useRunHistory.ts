@@ -68,6 +68,8 @@ export function useRunHistory() {
         return compareEvidencePacks(currentEvidencePack, saved.evidencePack);
     };
 
+    const getFullRun = (id: string) => repo.get(id);
+
     return {
         runs,
         selectedRun,
@@ -76,6 +78,7 @@ export function useRunHistory() {
         updateLabel,
         deleteRun,
         clearSelected,
-        compareWithCurrent
+        compareWithCurrent,
+        getFullRun
     };
 }
