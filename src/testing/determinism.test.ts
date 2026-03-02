@@ -36,7 +36,7 @@ function buildFiveStressScenarios(): ScenarioInput[] {
     ];
 }
 
-describe("SCIL Level 7 Determinism Guard", () => {
+describe("CP Level 7 Determinism Guard", () => {
     it("must preserve executive/regulatory/lab outputs when research enabled", () => {
         const seed = 1337;
         const scenarios = buildFiveStressScenarios();
@@ -68,7 +68,7 @@ describe("SCIL Level 7 Determinism Guard", () => {
 import { createScenarioPackId, createResultHash } from "../risk-engine/audit/reportFingerprint";
 import { runSimulation } from "../risk-engine/core/monteCarloEngine";
 
-describe("SCIL Report Fingerprint Audit", () => {
+describe("CP Report Fingerprint Audit", () => {
     it("should preserve scenarioPackId properties for same inputs but change for ordering", () => {
         const scenarios = buildFiveStressScenarios();
         const baseMatrix = scenarios[0].correlationMatrix;

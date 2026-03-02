@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { LocalRunRepository } from "../runs/localRunRepository";
 import { compareEvidencePacks } from "../runs/compareRuns";
 
-describe("SCIL Level 13 - Run History", () => {
+describe("CP Level 13 - Run History", () => {
     it("LocalRunRepository enforces max 50 items sorting by date", () => {
         const repo = new LocalRunRepository();
         repo.clear();

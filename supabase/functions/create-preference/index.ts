@@ -46,11 +46,11 @@ Deno.serve(async (req) => {
       });
     }
 
-    const origin = req.headers.get("origin") || req.headers.get("referer")?.replace(/\/$/, "") || "https://cashpilot-fintech.lovable.app";
+    const origin = req.headers.get("origin") || req.headers.get("referer")?.replace(/\/$/, "") || "https://sovereign-atlas.lovable.app";
 
     // Try MercadoPago Preapproval (recurring) first, fallback to Checkout Preference
     const preapproval = {
-      reason: "CashPilot - Plan Fundadores",
+      reason: "Sovereign Atlas - Plan Fundadores",
       external_reference: userId,
       payer_email: userEmail,
       auto_recurring: {
@@ -86,7 +86,7 @@ Deno.serve(async (req) => {
       const preference = {
         items: [
           {
-            title: "CashPilot - Plan Fundadores (1 mes)",
+            title: "Sovereign Atlas - Plan Fundadores (1 mes)",
             quantity: 1,
             unit_price: 29,
             currency_id: "UYU",

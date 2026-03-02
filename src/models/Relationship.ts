@@ -1,5 +1,5 @@
 /**
- * SCIL - Sovereign Capital Intelligence Layer
+ * CP - CashPilot Capital Intelligence Layer
  * Domain Model: Relationship
  * Represents the directed connection or exposure between two entities in the Capital Graph.
  */

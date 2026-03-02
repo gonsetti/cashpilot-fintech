@@ -1,5 +1,5 @@
 /**
- * SCIL WORM Governance Ledger
+ * CP WORM Governance Ledger
  * Chained cryptographic verification structure.
  */
 

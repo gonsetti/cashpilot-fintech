@@ -39,7 +39,7 @@ export function buildExecutiveOnePager(input: {
         : "";
 
     const lines = [
-        "SCIL — Resumen Ejecutivo (Demo Institucional)",
+        "CP — Resumen Ejecutivo (Demo Institucional)",
         "--------------------------------------------------",
         `[TRAZABILIDAD] PACK:${packStr} | ENGINE:${engineStr} | HASH:${hashStr} | SEED:${seedStr}`,
         "",

@@ -6,7 +6,7 @@ import {
 import { runInstitutionalDemo } from "../demo/runInstitutionalDemo";
 import { getCapitalState } from "../api/capital";
 
-describe("SCIL Level 10 - Institutional Demo Guard", () => {
+describe("CP Level 10 - Institutional Demo Guard", () => {
 
     beforeAll(async () => {
         // Force evaluation of the capital module so the activeGraph is seeded

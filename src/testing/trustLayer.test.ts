@@ -8,7 +8,7 @@ import {
 } from "../trust/modelTransparency";
 import { buildEvidencePack } from "../risk-engine/audit/evidencePack";
 
-describe("SCIL Level 12 - Trust Multiplier Layer", () => {
+describe("CP Level 12 - Trust Multiplier Layer", () => {
 
     it("Constants hold valid institutional text arrays", () => {
         expect(TRUST_STATEMENT_ES.length).toBeGreaterThan(20);

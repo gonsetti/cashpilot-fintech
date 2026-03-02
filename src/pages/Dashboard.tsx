@@ -2,7 +2,7 @@ import React, { useEffect, useState, Suspense, useMemo, useRef, useCallback } fr
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 
-// SCIL APIs
+// CP APIs
 import { getCapitalState } from "@/api/capital";
 import { getSystemicRisk, SystemicRiskReport } from "@/api/risk";
 import { executeSimulation } from "@/api/simulation";
@@ -33,7 +33,7 @@ const ResearchModule = FEATURE_FLAGS.ADVANCED_ANALYTICS
   ? React.lazy(() => import("@/components/dashboard/ResearchModule"))
   : null;
 
-export default function SCILTerminal() {
+export default function Dashboard() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
 
@@ -184,9 +184,9 @@ export default function SCILTerminal() {
         <div className="w-16 h-16 rounded-sm bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-6 shadow-2xl">
           <span className="material-icons text-zinc-500 text-3xl">lock</span>
         </div>
-        <h1 className="text-2xl md:text-3xl font-bold text-zinc-100 mb-4 tracking-tight">Acceso Institucional Restringido</h1>
-        <p className="text-zinc-400 text-sm max-w-md mb-8 leading-relaxed">Sovereign Atlas opera bajo mandato estratégico confidencial.</p>
-        <button onClick={() => navigate("/contacto")} className="bg-zinc-100 text-zinc-950 px-6 py-2.5 rounded text-sm font-semibold hover:bg-white transition-colors">Solicitar Evaluación Confidencial</button>
+        <h1 className="text-2xl md:text-3xl font-bold text-zinc-100 mb-4 tracking-tight">Acceso Restringido</h1>
+        <p className="text-zinc-400 text-sm max-w-md mb-8 leading-relaxed">Esta área es exclusiva para clientes con implementación de CashPilot activa.</p>
+        <button onClick={() => navigate("/")} className="bg-zinc-100 text-zinc-950 px-6 py-2.5 rounded text-sm font-semibold hover:bg-white transition-colors">Volver al Inicio</button>
       </div>
     );
   }
@@ -209,7 +209,7 @@ export default function SCILTerminal() {
       setAllocationReport(alloc);
       setLedger(GovernanceAudit.getLedger());
     } catch (e) {
-      console.error("SCIL Boot Error:", e);
+      console.error("Dashboard Boot Error:", e);
     } finally {
       setLoading(false);
     }
@@ -309,7 +309,7 @@ export default function SCILTerminal() {
     return (
       <div className="min-h-screen bg-[#0a0a0a] text-zinc-400 flex flex-col items-center justify-center font-mono text-sm">
         <span className="material-icons animate-spin text-2xl mb-4 text-emerald-500">sync</span>
-        INITIALIZING SOVEREIGN CAPITAL INTELLIGENCE LAYER...
+        INICIALIZANDO CASHPILOT DASHBOARD...
       </div>
     );
   }
@@ -323,9 +323,12 @@ export default function SCILTerminal() {
           <div className="w-8 h-8 bg-zinc-900 border border-zinc-800 flex items-center justify-center text-emerald-500">
             <span className="material-icons text-sm">account_tree</span>
           </div>
-          <div className="flex items-center gap-4">
-            <h1 className="font-bold text-zinc-100 tracking-widest text-sm">SCIL TERMINAL</h1>
+          <div className="flex flex-col">
+            <h1 className="font-bold text-zinc-100 tracking-widest text-sm">PANEL DEL CLIENTE</h1>
+            <span className="text-[0.65rem] text-zinc-500 mt-0.5 tracking-wider">Incluido en la implementación</span>
+          </div>
 
+          <div className="flex items-center gap-4 ml-4">
             <button
               onClick={() => setIsHistoryOpen(true)}
               className="flex items-center gap-1.5 text-[0.65rem] border border-blue-900/50 bg-blue-900/20 text-blue-400 px-2 py-0.5 rounded hover:bg-blue-900/40 transition-colors tracking-widest font-bold"
@@ -334,10 +337,17 @@ export default function SCILTerminal() {
               {runs.length > 0 && <span className="bg-blue-500/20 px-1 rounded text-blue-300 ml-1">{runs.length}</span>}
             </button>
 
-            <div className="flex items-center gap-2 text-[0.6rem] text-zinc-500 mt-0.5 ml-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-              SECURE CONNECTION ESTABLISHED
-            </div>
+            {runs.length === 0 && !demoRunning ? (
+              <div className="flex items-center gap-2 text-[0.6rem] text-amber-500 mt-0.5 ml-2 border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 rounded">
+                <span className="material-icons text-[0.7rem]">warning</span>
+                DATOS DE EJEMPLO
+              </div>
+            ) : (
+              <div className="flex items-center gap-2 text-[0.6rem] text-zinc-500 mt-0.5 ml-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                SECURE CONNECTION ESTABLISHED
+              </div>
+            )}
           </div>
         </div>
 
@@ -364,7 +374,7 @@ export default function SCILTerminal() {
               className="bg-emerald-900/30 text-emerald-400 border border-emerald-800 hover:bg-emerald-900/50 hover:text-emerald-300 transition-all px-6 py-1.5 rounded disabled:opacity-30 flex items-center gap-2 font-bold tracking-widest"
             >
               {demoRunning ? <span className="material-icons animate-spin text-sm">refresh</span> : <span className="material-icons text-sm">bolt</span>}
-              {demoRunning ? 'EXECUTING PIPELINE...' : 'RUN INSTITUTIONAL DEMO'}
+              {demoRunning ? 'CARGANDO VISTA...' : 'VISTA DE EJEMPLO'}
             </button>
             {demoRunning ? (
               <div className="text-[0.55rem] text-emerald-500 mt-1 uppercase tracking-widest font-bold flex gap-2">
@@ -373,13 +383,16 @@ export default function SCILTerminal() {
               </div>
             ) : (
               <span className="text-[0.55rem] text-zinc-600 mt-1 uppercase tracking-widest">
-                5 Scenarios · Deterministic Seed · Evidence Export
+                Visualización de datos de prueba, sin conexión real.
               </span>
             )}
           </div>
         </div>
 
         <div className="flex gap-6 items-center text-zinc-500">
+          <div className="hidden lg:block text-[0.65rem] text-zinc-600 max-w-[200px] text-right italic normal-case mr-4">
+            Este panel se personaliza durante la implementación según tu estructura.
+          </div>
           <div className="flex flex-col items-end">
             <span className="text-zinc-400">GLOBAL LIQUIDITY</span>
             <span className="text-lg text-emerald-400 font-medium">${globalLiquidity.toLocaleString()}</span>
@@ -403,7 +416,7 @@ export default function SCILTerminal() {
             <div className="flex items-center justify-between mb-4 border-b border-zinc-900 pb-2">
               <h2 className="text-zinc-100 font-semibold tracking-wider flex items-center gap-2">
                 <span className="material-icons text-emerald-500 text-sm">share</span>
-                NETWORK OVERVIEW / CAPITAL GRAPH
+                VISIÓN GENERAL DE CAJA
               </h2>
               <span className="bg-zinc-900 px-2 py-1 rounded text-[0.6rem]">{entities.length} NODES MAPPED</span>
             </div>
@@ -412,12 +425,12 @@ export default function SCILTerminal() {
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr className="border-b border-zinc-800 text-zinc-500">
-                    <th className="py-2 px-3 font-normal">NODE ID</th>
-                    <th className="py-2 px-3 font-normal">INSTITUTION</th>
-                    <th className="py-2 px-3 font-normal text-right">LIQUIDITY</th>
-                    <th className="py-2 px-3 font-normal text-right">BURN RATE</th>
-                    <th className="py-2 px-3 font-normal text-right">EQUITY</th>
-                    <th className="py-2 px-3 font-normal text-center">RISK TIER</th>
+                    <th className="py-2 px-3 font-normal">ID</th>
+                    <th className="py-2 px-3 font-normal">CUENTA / ENTIDAD</th>
+                    <th className="py-2 px-3 font-normal text-right">CAJA DISPONIBLE</th>
+                    <th className="py-2 px-3 font-normal text-right">QUEMA (BURN)</th>
+                    <th className="py-2 px-3 font-normal text-right">PATRIMONIO</th>
+                    <th className="py-2 px-3 font-normal text-center">RIESGO</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-zinc-900/50">
@@ -440,7 +453,7 @@ export default function SCILTerminal() {
             </div>
 
             {/* EXPOSURE MATRIX */}
-            <h3 className="text-zinc-500 font-semibold tracking-wider mt-6 mb-3 border-b border-zinc-900 pb-2">CROSS-ENTITY EXPOSURE MATRIX</h3>
+            <h3 className="text-zinc-500 font-semibold tracking-wider mt-6 mb-3 border-b border-zinc-900 pb-2">MATRIZ DE EXPOSICIÓN Y MOVIMIENTOS</h3>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
               {relationships.map((r, i) => (
                 <div key={i} className="bg-zinc-900/30 border border-zinc-800/50 p-3 rounded flex flex-col gap-2">
@@ -466,7 +479,7 @@ export default function SCILTerminal() {
             <div className="flex items-center justify-between mb-4 border-b border-zinc-900 pb-2">
               <h2 className="text-zinc-100 font-semibold tracking-wider flex items-center gap-2">
                 <span className="material-icons text-emerald-500 text-sm">policy</span>
-                TRANSPARENCIA DEL MODELO (TRUST LAYER)
+                TRANSPARENCIA Y PARÁMETROS
               </h2>
             </div>
 
@@ -525,7 +538,7 @@ export default function SCILTerminal() {
             <div className="flex items-center justify-between mb-4 border-b border-zinc-900 pb-2">
               <h2 className="text-zinc-100 font-semibold tracking-wider flex items-center gap-2">
                 <span className="material-icons text-amber-500 text-sm">science</span>
-                MONTE CARLO SIMULATION LAB
+                SIMULADOR DE ESCENARIOS (LAB)
               </h2>
               <button
                 onClick={runStressTest}
@@ -631,11 +644,11 @@ export default function SCILTerminal() {
         {/* SIDE PANELS (COL 9-12) */}
         <section className="col-span-12 xl:col-span-4 flex flex-col gap-6">
 
-          {/* SYSTEMIC RISK PANEL */}
+          {/* PANEL DE RIESGO DE CASH */}
           <div className={`bg-[#0a0a0a] border border-zinc-900 rounded p-5 ${getPresenterClass(1)}`}>
             <h2 className="text-zinc-100 font-semibold tracking-wider flex items-center gap-2 mb-4 border-b border-zinc-900 pb-2">
               <span className="material-icons text-rose-500 text-sm">warning</span>
-              SYSTEMIC RISK PANEL
+              PANEL DE RIESGO DE CASH
             </h2>
 
             {riskReport && (
@@ -670,7 +683,7 @@ export default function SCILTerminal() {
           <div ref={section4Ref as any} className={`bg-[#0a0a0a] border border-zinc-900 rounded p-5 ${getPresenterClass(4)}`}>
             <h2 className="text-zinc-100 font-semibold tracking-wider flex items-center gap-2 mb-4 border-b border-zinc-900 pb-2">
               <span className="material-icons text-blue-500 text-sm">swap_horiz</span>
-              OPTIMAL ALLOCATION SOLVER
+              SUGERENCIAS DE DISTRIBUCIÓN
             </h2>
 
             {allocationReport && allocationReport.result.transfers.length > 0 ? (
@@ -708,7 +721,7 @@ export default function SCILTerminal() {
           <div className={`bg-[#0a0a0a] border border-zinc-900 rounded p-5 ${getPresenterClass(4)}`}>
             <h2 className="text-zinc-100 font-semibold tracking-wider flex items-center gap-2 mb-4 border-b border-zinc-900 pb-2">
               <span className="material-icons text-purple-500 text-sm">gavel</span>
-              GOVERNANCE LEDGER (WORM)
+              REGISTRO DE ACTIVIDAD (LOGS)
             </h2>
             <div className="space-y-2 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
               {ledger.length === 0 && <span className="text-zinc-600 text-[0.65rem]">LEDGER EMPTY</span>}
@@ -737,7 +750,7 @@ export default function SCILTerminal() {
               <div className="flex items-center justify-between mb-4 border-b border-zinc-900 pb-2">
                 <h2 className="text-zinc-100 font-semibold tracking-wider flex items-center gap-2">
                   <span className="material-icons text-emerald-500 text-sm">lightbulb</span>
-                  ACTIONABLE RECOMMENDATIONS (DECISION ENGINE)
+                  RECOMENDACIONES ESTRATÉGICAS
                 </h2>
                 <div className="flex gap-4 items-center">
                   {copied && <span className="text-emerald-500 text-[0.6rem] font-bold animate-pulse">COPIED TO CLIPBOARD</span>}

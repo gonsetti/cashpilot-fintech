@@ -5,7 +5,7 @@ import { buildEvidencePack } from "../risk-engine/audit/evidencePack";
 import { executeSimulation } from "../api/simulation";
 import { SAFETY_LIMITS } from "../config/safetyLimits";
 
-describe("SCIL Level 8 & 9 - Safety & Evidence Export Guard", () => {
+describe("CP Level 8 & 9 - Safety & Evidence Export Guard", () => {
     it("must build deterministic evidence packs for the same inputs", () => {
         const dummyResult: any = {
             VaR: 100,

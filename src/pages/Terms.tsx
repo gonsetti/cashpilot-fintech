@@ -4,7 +4,7 @@ import Footer from "@/components/landing/Footer";
 
 export default function Terms() {
     useEffect(() => {
-        document.title = "Términos y Condiciones | Sovereign Atlas";
+        document.title = "CashPilot — Términos y Condiciones";
         window.scrollTo(0, 0);
     }, []);
 
@@ -21,28 +21,28 @@ export default function Terms() {
                     <section>
                         <h2 className="text-lg font-semibold text-zinc-200 mb-3 border-b border-zinc-800 pb-2">1. Uso del Servicio</h2>
                         <p>
-                            Sovereign Atlas provee infraestructura de modelamiento analítico para arquitectura topológica de capital. Nuestros algoritmos están diseñados exclusively para evaluación de riesgo y backtesting determinista corporativo, B2B. Ni la plataforma ni el acceso web constituyen asesoramiento financiero certificado.
+                            CashPilot provee un servicio de implementación y mantenimiento de dashboard financiero. La plataforma y la información allí provista se ofrece como una herramienta de toma de decisiones, pero no constituye asesoramiento contable ni financiero legal.
                         </p>
                     </section>
 
                     <section>
                         <h2 className="text-lg font-semibold text-zinc-200 mb-3 border-b border-zinc-800 pb-2">2. Limitación de Responsabilidad</h2>
                         <p>
-                            El uso del simulador, incluyendo la provisión del Evidence Pack y los algoritmos Monte Carlo, se ofrecen "TAL CUAL" ("AS IS"). Sovereign Atlas no garantiza infalibilidad predicativa ni emite opiniones auditoras certificadas por reguladores gubernamentales.
+                            El usuario es responsable de la exactitud de los datos ingresados en la plataforma. CashPilot no se hace responsable por decisiones de negocio tomadas a partir del uso directo de la herramienta, ni por diferencias con la contabilidad oficial de la empresa.
                         </p>
                     </section>
 
                     <section>
-                        <h2 className="text-lg font-semibold text-zinc-200 mb-3 border-b border-zinc-800 pb-2">3. Propiedad Intelectual</h2>
+                        <h2 className="text-lg font-semibold text-zinc-200 mb-3 border-b border-zinc-800 pb-2">3. Disponibilidad y Mantenimiento</h2>
                         <p>
-                            Toda matemática analítica expuesta mediante los scripts UI, interfaces visuales, heurísticas y reportes automáticos generados permanecen como propiedad intelectual de Sovereign Atlas, a excepción de los input topológicos privados proveídos por el usuario, los cuales mantienen su título matriz.
+                            Haremos nuestro mejor esfuerzo por mantener la plataforma operativa 24/7. Sin embargo, pueden existir momentos de mantenimiento programado o fallas técnicas de proveedores en la nube que escapen a nuestro control.
                         </p>
                     </section>
 
                     <section>
                         <h2 className="text-lg font-semibold text-zinc-200 mb-3 border-b border-zinc-800 pb-2">4. Contacto Legal</h2>
                         <p>
-                            Para correspondencia oficial corporativa: <code>legal@sovereignatlas.example.com</code>
+                            Para asuntos legales y comerciales, escríbenos a: <code>avino.contacto@gmail.com</code>
                         </p>
                     </section>
                 </div>

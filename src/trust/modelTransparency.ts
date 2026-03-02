@@ -27,7 +27,7 @@ export const TRUST_STATEMENT_ES: string =
     "Este modelo no predice el futuro. Evalúa resiliencia estructural bajo estrés paramétrico y escenarios plausibles.";
 
 export const EXCEL_COMPARISON_ES: string =
-    "Excel es estático y determinístico. SCIL simula distribución de resultados, colas de riesgo y contagio sistémico bajo incertidumbre.";
+    "Excel es estático y determinístico. CP simula distribución de resultados, colas de riesgo y contagio sistémico bajo incertidumbre.";
 
 export const MODEL_ASSUMPTIONS_ES: ModelAssumption[] = [
     { id: "A1", title: "Ejecución Estocástica", description: "Monte Carlo sobre iteraciones configuradas para aproximar distribuciones de pérdida conjunta." },

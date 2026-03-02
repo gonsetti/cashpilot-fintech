@@ -32,7 +32,7 @@ function generateNormal(rng: () => number, mean: number = 0, stdDev: number = 1)
 }
 
 /**
- * SCIL Monte Carlo Engine - Quant Rewrite
+ * CP Monte Carlo Engine - Quant Rewrite
  * 50,000+ Iterations using One-Factor Correlated Macro Model.
  */
 export async function runMonteCarlo(

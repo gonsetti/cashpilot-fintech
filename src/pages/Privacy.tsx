@@ -4,7 +4,7 @@ import Footer from "@/components/landing/Footer";
 
 export default function Privacy() {
   useEffect(() => {
-    document.title = "Política de Privacidad | Sovereign Atlas";
+    document.title = "CashPilot — Privacidad";
     window.scrollTo(0, 0);
   }, []);
 
@@ -21,28 +21,28 @@ export default function Privacy() {
           <section>
             <h2 className="text-lg font-semibold text-zinc-200 mb-3 border-b border-zinc-800 pb-2">1. Información Recopilada</h2>
             <p>
-              Sovereign Atlas, en su provisión de infraestructura analítica corporativa, almacena metadatos estrictamente volcados en los formularios de ingesta institucionales (nombre, rol, organización, contacto corporativo). No empleamos cookies de rastreo invasivas ni integramos sustratos de advertising third-party.
+              CashPilot recopila la información necesaria para brindarte el servicio de plataforma y tablero financiero. Esto incluye datos de contacto y la información financiera que conectes o cargues en la herramienta.
             </p>
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-zinc-200 mb-3 border-b border-zinc-800 pb-2">2. Naturaleza del Tratamiento</h2>
+            <h2 className="text-lg font-semibold text-zinc-200 mb-3 border-b border-zinc-800 pb-2">2. Uso de los Datos</h2>
             <p>
-              La ingesta topológica (grafos, matrices paramétricas) ejecutada en instancias de simulación opera in-memory a menos que el directorio autorice de manera explícita la retención de Evidence Packs en servidores seguros. Sus datos no son cruzados con datasets globales ni se utilizan para entrenar Algoritmos Predictivos de IA Abiertos.
+              Tus datos financieros son estrictamente confidenciales y se utilizan únicamente para generar tus propios reportes y métricas dentro de tu dashboard. No compartimos, vendemos, ni alquilamos tus datos a terceros.
             </p>
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-zinc-200 mb-3 border-b border-zinc-800 pb-2">3. Seguridad Arquitectónica</h2>
+            <h2 className="text-lg font-semibold text-zinc-200 mb-3 border-b border-zinc-800 pb-2">3. Seguridad</h2>
             <p>
-              Toda comunicación inter-nodal durante la ingesta de escenarios se encuentra securizada bajo estrictos cifrados de capa de transporte (TLS &gt; 1.2). Las exportaciones de evidencia están sometidas a hashing criptográfico y sellado offline irrepudiable.
+              Implementamos medidas de seguridad estándar de la industria para proteger tus credenciales y datos almacenados en nuestras bases de datos en la nube.
             </p>
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-zinc-200 mb-3 border-b border-zinc-800 pb-2">4. Canales de Privacidad</h2>
+            <h2 className="text-lg font-semibold text-zinc-200 mb-3 border-b border-zinc-800 pb-2">4. Contacto</h2>
             <p>
-              Cualquier consulta relacionada a la rectificación, purga en caliente o supresión definitiva de telemetría e historiales cruzados debe dirigirse al oficial DPO a través de: <code>privacy@sovereignatlas.example.com</code>
+              Para cualquier consulta sobre tus datos o para solicitar su eliminación, puedes escribirnos a: <code>avino.contacto@gmail.com</code>
             </p>
           </section>
         </div>

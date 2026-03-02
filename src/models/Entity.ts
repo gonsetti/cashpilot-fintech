@@ -1,5 +1,5 @@
 /**
- * SCIL - Sovereign Capital Intelligence Layer
+ * CP - CashPilot Capital Intelligence Layer
  * Domain Model: Entity
  * Represents a discrete holding, subsidiary, or financial node in the Capital Graph.
  */

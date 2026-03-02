@@ -99,7 +99,7 @@ const typeConfig = {
   info: { bg: "bg-primary/5", border: "border-primary/15", iconColor: "text-primary" },
 };
 
-export default function CashPilotInsights(props: Props) {
+export default function CashPilotAtlasInsights(props: Props) {
   const insights = generateInsights(props);
 
   if (insights.length === 0) return null;
@@ -108,7 +108,7 @@ export default function CashPilotInsights(props: Props) {
     <div className="mb-6">
       <div className="flex items-center gap-2 mb-4">
         <span className="material-icons text-primary text-base">auto_awesome</span>
-        <h2 className="text-sm font-bold text-foreground uppercase tracking-wider">Sovereign Atlas Insights</h2>
+        <h2 className="text-sm font-bold text-foreground uppercase tracking-wider">CashPilot Insights</h2>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

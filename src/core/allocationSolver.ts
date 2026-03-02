@@ -15,7 +15,7 @@ export interface OptimalAllocationOutput {
 }
 
 /**
- * SCIL Allocation Solver
+ * CP Allocation Solver
  * Uses Simulated Annealing to discover global minima for Systemic Fragility
  * subjected to minimum reserve constraints.
  */

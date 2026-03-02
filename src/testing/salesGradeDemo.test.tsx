@@ -16,7 +16,7 @@ vi.mock("@/integrations/supabase/client", () => ({
     }
 }));
 
-describe("SCIL Level 11 - Sales Grade Demo & Presenter Mode", () => {
+describe("CP Level 11 - Sales Grade Demo & Presenter Mode", () => {
 
     it("generateRecommendations returns exactly 3 stable recommendations", () => {
         const dummyScenarios = [
@@ -70,7 +70,7 @@ describe("SCIL Level 11 - Sales Grade Demo & Presenter Mode", () => {
             </MemoryRouter>
         );
 
-        // Terminals initializes with "INITIALIZING SOVEREIGN CAPITAL INTELLIGENCE LAYER..."
+        // Terminals initializes with "INITIALIZING CashPilot CAPITAL INTELLIGENCE LAYER..."
         // Then it flips. As we are not awaiting all promises gracefully in standard render without act(), 
         // we might not see the full DOM immediately. But we can test if the initial DOM mounts without crashing.
 

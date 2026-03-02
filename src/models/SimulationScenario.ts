@@ -1,5 +1,5 @@
 /**
- * SCIL - Sovereign Capital Intelligence Layer
+ * CP - CashPilot Capital Intelligence Layer
  * Domain Model: Simulation Scenario
  * Represents boundaries and multipliers for Monte Carlo stress tests.
  */
