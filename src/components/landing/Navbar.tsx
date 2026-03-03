@@ -44,9 +44,6 @@ export default function Navbar() {
                     <button onClick={() => scrollTo('audiencia')} className="text-sm font-medium text-zinc-400 hover:text-zinc-200 transition-colors">
                         Para Quién Es
                     </button>
-                    <Link to="/login" className="text-sm font-medium text-zinc-400 hover:text-zinc-200 transition-colors">
-                        Iniciar sesión
-                    </Link>
                     <button onClick={() => setIsModalOpen(true)} className="bg-emerald-600 text-white px-4 py-1.5 rounded-md text-sm font-bold hover:bg-emerald-500 transition-all shadow-lg shadow-emerald-900/20">
                         Solicitar evaluación
                     </button>
