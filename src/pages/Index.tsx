@@ -25,11 +25,8 @@ export default function Index() {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-zinc-100 tracking-tight leading-[1.1] mb-8 max-w-4xl mx-auto">
             Tomá decisiones grandes sin poner en riesgo tu caja.
           </h1>
-          <p className="text-lg md:text-xl text-zinc-400 mb-4 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-zinc-400 mb-12 max-w-3xl mx-auto leading-relaxed">
             Diseño e implemento dashboards financieros personalizados para dueños que ya facturan y necesitan claridad real antes de crecer.
-          </p>
-          <p className="text-zinc-500 text-base md:text-lg mb-12 max-w-3xl mx-auto">
-            Inversión inicial desde $7,000 — menos de lo que cuesta un error de contratación.
           </p>
           <div className="flex flex-col gap-4 justify-center items-center">
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full sm:w-auto">
