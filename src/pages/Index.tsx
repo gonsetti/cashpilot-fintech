@@ -4,6 +4,8 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import LeadCaptureModal from "@/components/LeadCaptureModal";
 
+export const CALENDLY_URL = "https://calendly.com/"; // Reemplazar con el link real
+
 export default function Index() {
   const { pathname } = useLocation();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -23,15 +25,21 @@ export default function Index() {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-zinc-100 tracking-tight leading-[1.1] mb-8 max-w-4xl mx-auto">
             Tomá decisiones grandes sin poner en riesgo tu caja.
           </h1>
-          <p className="text-lg md:text-xl text-zinc-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-zinc-400 mb-4 max-w-3xl mx-auto leading-relaxed">
             Diseño e implemento dashboards financieros personalizados para dueños que ya facturan y necesitan claridad real antes de crecer.
+          </p>
+          <p className="text-zinc-500 text-base md:text-lg mb-12 max-w-3xl mx-auto">
+            Inversión inicial desde $7,000 — menos de lo que cuesta un error de contratación.
           </p>
           <div className="flex flex-col gap-4 justify-center items-center">
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full sm:w-auto">
-              <button onClick={() => setIsModalOpen(true)} className="w-full sm:w-auto bg-emerald-600 text-white px-8 py-4 rounded-md font-bold text-base hover:bg-emerald-500 transition-all shadow-lg shadow-emerald-900/20">
-                Solicitar evaluación
-              </button>
-              <a href="#solucion" className="w-full sm:w-auto bg-transparent border border-zinc-700 text-zinc-300 px-8 py-4 rounded-md font-semibold text-base hover:bg-zinc-800 transition-colors">
+              <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
+                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto min-h-[44px] flex items-center justify-center bg-[#EA580C] text-white px-8 py-4 rounded-md font-bold text-base hover:bg-orange-500 transition-all shadow-lg shadow-orange-900/20">
+                  Agendar llamada de diagnóstico
+                </a>
+                <span className="text-zinc-400 text-sm">15 minutos. Sin compromiso. Te muestro cómo quedaría tu dashboard.</span>
+              </div>
+              <a href="#solucion" className="w-full sm:w-auto min-h-[44px] flex items-center justify-center bg-transparent border border-zinc-700 text-zinc-300 px-8 py-4 rounded-md font-semibold text-base hover:bg-zinc-800 transition-colors">
                 Ver cómo funciona
               </a>
             </div>
@@ -229,18 +237,38 @@ export default function Index() {
           </div>
         </section>
 
+        {/* TESTIMONIOS */}
+        <section className="py-32 px-6 bg-[#0a0a0a] border-b border-zinc-900/50 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-zinc-100 tracking-tight mb-12">
+              Resultados de quienes ya tienen claridad
+            </h2>
+            <div className="bg-[#F9FAFB] p-12 rounded-2xl max-w-2xl mx-auto mb-10">
+              <p className="text-[#1F2937] text-xl font-medium leading-relaxed italic">
+                "Todavía no hay testimonios porque estoy empezando. ¿Vas a ser el primero?"
+              </p>
+            </div>
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center justify-center bg-[#0A7B3C] text-white px-8 py-4 rounded-md font-bold text-base hover:bg-[#086330] transition-colors shadow-lg">
+              Quiero ser caso de éxito
+            </a>
+          </div>
+        </section>
+
         {/* CTA FINAL */}
         <section id="contacto" className="py-32 px-6 bg-[#020202] text-center border-t border-zinc-900">
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-2xl mx-auto flex flex-col items-center">
             <h2 className="text-3xl md:text-5xl font-bold text-zinc-100 tracking-tight leading-snug mb-8">
               Dejá de tomar decisiones a ciegas.
             </h2>
             <p className="text-xl text-zinc-400 mb-12">
-              Agenda una llamada con nuestro equipo y te mostramos cómo organizamos las finanzas de tu negocio en días.
+              Agenda una llamada conmigo y te mostramos cómo organizamos las finanzas de tu negocio en días.
             </p>
-            <button onClick={() => setIsModalOpen(true)} className="bg-emerald-600 text-white px-10 py-5 rounded-md font-bold text-lg hover:bg-emerald-500 transition-colors inline-block tracking-wide shadow-xl shadow-emerald-900/20">
-              Solicitar evaluación
-            </button>
+            <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center bg-[#EA580C] text-white px-10 py-5 rounded-md font-bold text-lg hover:bg-orange-500 transition-colors tracking-wide shadow-xl shadow-orange-900/20">
+                Quiero mi diagnóstico gratuito
+              </a>
+              <span className="text-zinc-500 text-sm">Sin compromiso. 15 minutos. Te muestro cómo sería tu dashboard.</span>
+            </div>
           </div>
         </section>
       </main>

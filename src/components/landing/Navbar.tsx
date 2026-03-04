@@ -1,11 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import LeadCaptureModal from "@/components/LeadCaptureModal";
+import { CALENDLY_URL } from "@/pages/Index";
 
 export default function Navbar() {
     const { pathname } = useLocation();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const isHome = pathname === '/';
 
@@ -44,9 +43,9 @@ export default function Navbar() {
                     <button onClick={() => scrollTo('audiencia')} className="text-sm font-medium text-zinc-400 hover:text-zinc-200 transition-colors">
                         Para Quién Es
                     </button>
-                    <button onClick={() => setIsModalOpen(true)} className="bg-emerald-600 text-white px-4 py-1.5 rounded-md text-sm font-bold hover:bg-emerald-500 transition-all shadow-lg shadow-emerald-900/20">
-                        Solicitar evaluación
-                    </button>
+                    <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="bg-[#EA580C] text-white px-4 py-1.5 rounded-md text-sm font-bold hover:bg-orange-500 transition-all shadow-lg shadow-orange-900/20">
+                        Agendar llamada de diagnóstico
+                    </a>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -61,11 +60,9 @@ export default function Navbar() {
                     <button onClick={() => scrollTo('problema')} className="text-left text-sm font-medium text-zinc-300">El Problema</button>
                     <button onClick={() => scrollTo('solucion')} className="text-left text-sm font-medium text-zinc-300">Qué Incluye</button>
                     <button onClick={() => scrollTo('audiencia')} className="text-left text-sm font-medium text-zinc-300">Para Quién Es</button>
-                    <button onClick={() => { setMobileMenuOpen(false); setIsModalOpen(true); }} className="text-left text-sm font-medium text-emerald-400">Solicitar evaluación</button>
+                    <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="text-left text-sm font-bold text-orange-500">Agendar llamada de diagnóstico</a>
                 </div>
             )}
-
-            <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </nav>
     );
 }
