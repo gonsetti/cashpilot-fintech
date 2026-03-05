@@ -7,7 +7,7 @@ export default function Footer() {
                 <div className="flex flex-wrap items-center justify-center gap-2 text-zinc-400">
                     <span>© 2025 CashPilot</span>
                     <span>—</span>
-                    <a href="https://instagram.com/cashpilot" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 transition-colors">Instagram</a>
+                    <a href="https://instagram.com/cashpilot.io" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-300 transition-colors">Instagram</a>
                     <span>—</span>
                     <Link to="/legal/privacidad" className="hover:text-zinc-300 transition-colors">Política de Privacidad</Link>
                     <span>—</span>

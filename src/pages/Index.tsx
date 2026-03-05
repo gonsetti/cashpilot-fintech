@@ -4,7 +4,7 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import LeadCaptureModal from "@/components/LeadCaptureModal";
 
-export const CALENDLY_URL = "https://calendly.com/"; // Reemplazar con el link real
+export const CALENDLY_URL = "https://calendly.com/avino-contacto/30min";
 
 export default function Index() {
   const { pathname } = useLocation();
