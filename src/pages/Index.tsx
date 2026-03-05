@@ -246,19 +246,19 @@ export default function Index() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 text-left">
               {/* Card 1 */}
-              <div className="bg-[#F9FAFB] p-8 rounded-2xl flex flex-col gap-4 shadow-sm">
-                <div className="flex items-center gap-2 mb-2">
+              <div className="bg-[#F9FAFB] p-6 lg:p-8 rounded-2xl flex flex-col gap-4 shadow-sm">
+                <div className="flex items-center gap-3 mb-1">
                   <span className="text-xl" role="img" aria-label="marketing">📊</span>
-                  <h3 className="text-lg font-bold text-zinc-900">Agencia de marketing</h3>
+                  <h3 className="text-lg font-bold text-zinc-900 leading-tight">Agencia de marketing</h3>
                 </div>
-                <div className="space-y-1 mb-2 text-sm border-b border-zinc-200 pb-4">
-                  <div className="flex justify-between items-center py-1">
-                    <span className="text-zinc-500 font-medium">Facturación anual:</span>
-                    <span className="font-bold text-zinc-900">$850k</span>
+                <div className="space-y-2 mb-2 text-sm border-b border-zinc-200 pb-4">
+                  <div className="flex justify-between items-start gap-4">
+                    <span className="text-zinc-500 font-medium whitespace-nowrap">Facturación anual:</span>
+                    <span className="font-bold text-zinc-900 text-right">$850k</span>
                   </div>
-                  <div className="flex justify-between items-center py-1">
-                    <span className="text-zinc-500 font-medium">Estatus:</span>
-                    <span className="font-bold text-[#EA580C]">Implementación en curso</span>
+                  <div className="flex justify-between items-start gap-4">
+                    <span className="text-zinc-500 font-medium whitespace-nowrap">Estatus:</span>
+                    <span className="font-bold text-[#EA580C] text-right">Implementación en curso</span>
                   </div>
                 </div>
                 <p className="text-zinc-700 font-medium leading-relaxed italic">
@@ -267,19 +267,19 @@ export default function Index() {
               </div>
 
               {/* Card 2 */}
-              <div className="bg-[#F9FAFB] p-8 rounded-2xl flex flex-col gap-4 shadow-sm">
-                <div className="flex items-center gap-2 mb-2">
+              <div className="bg-[#F9FAFB] p-6 lg:p-8 rounded-2xl flex flex-col gap-4 shadow-sm">
+                <div className="flex items-center gap-3 mb-1">
                   <span className="text-xl" role="img" aria-label="ecommerce">🛒</span>
-                  <h3 className="text-lg font-bold text-zinc-900">E-commerce de moda</h3>
+                  <h3 className="text-lg font-bold text-zinc-900 leading-tight">E-commerce de moda</h3>
                 </div>
-                <div className="space-y-1 mb-2 text-sm border-b border-zinc-200 pb-4">
-                  <div className="flex justify-between items-center py-1">
-                    <span className="text-zinc-500 font-medium">Facturación anual:</span>
-                    <span className="font-bold text-zinc-900">$1.2M</span>
+                <div className="space-y-2 mb-2 text-sm border-b border-zinc-200 pb-4">
+                  <div className="flex justify-between items-start gap-4">
+                    <span className="text-zinc-500 font-medium whitespace-nowrap">Facturación anual:</span>
+                    <span className="font-bold text-zinc-900 text-right">$1.2M</span>
                   </div>
-                  <div className="flex justify-between items-center py-1">
-                    <span className="text-zinc-500 font-medium">Estatus:</span>
-                    <span className="font-bold text-[#EA580C]">Implementación en curso</span>
+                  <div className="flex justify-between items-start gap-4">
+                    <span className="text-zinc-500 font-medium whitespace-nowrap">Estatus:</span>
+                    <span className="font-bold text-[#EA580C] text-right">Implementación en curso</span>
                   </div>
                 </div>
                 <p className="text-zinc-700 font-medium leading-relaxed italic">
@@ -288,19 +288,19 @@ export default function Index() {
               </div>
 
               {/* Card 3 */}
-              <div className="bg-[#F9FAFB] p-8 rounded-2xl flex flex-col gap-4 shadow-sm">
-                <div className="flex items-center gap-2 mb-2">
+              <div className="bg-[#F9FAFB] p-6 lg:p-8 rounded-2xl flex flex-col gap-4 shadow-sm">
+                <div className="flex items-center gap-3 mb-1">
                   <span className="text-xl" role="img" aria-label="tech">💻</span>
-                  <h3 className="text-lg font-bold text-zinc-900">Consultora tecnológica</h3>
+                  <h3 className="text-lg font-bold text-zinc-900 leading-tight">Consultora tecnológica</h3>
                 </div>
-                <div className="space-y-1 mb-2 text-sm border-b border-zinc-200 pb-4">
-                  <div className="flex justify-between items-center py-1">
-                    <span className="text-zinc-500 font-medium">Facturación anual:</span>
-                    <span className="font-bold text-zinc-900">$600k</span>
+                <div className="space-y-2 mb-2 text-sm border-b border-zinc-200 pb-4">
+                  <div className="flex justify-between items-start gap-4">
+                    <span className="text-zinc-500 font-medium whitespace-nowrap">Facturación anual:</span>
+                    <span className="font-bold text-zinc-900 text-right">$600k</span>
                   </div>
-                  <div className="flex justify-between items-center py-1">
-                    <span className="text-zinc-500 font-medium">Estatus:</span>
-                    <span className="font-bold text-[#EA580C]">Implementación en curso</span>
+                  <div className="flex justify-between items-start gap-4">
+                    <span className="text-zinc-500 font-medium whitespace-nowrap">Estatus:</span>
+                    <span className="font-bold text-[#EA580C] text-right">Implementación en curso</span>
                   </div>
                 </div>
                 <p className="text-zinc-700 font-medium leading-relaxed italic">
